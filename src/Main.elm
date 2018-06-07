@@ -1,5 +1,7 @@
 module Main exposing (..)
 
+--olá
+
 import Html exposing (..)
 import Html.Events exposing (..)
 import Html.Attributes exposing (..)
@@ -209,15 +211,19 @@ tools : Model -> Html Msg
 tools model =
     menu [ class "tools" ]
         [ toolItem (model.mode == DrawMode)
-            [ button [ class "em em--writing-hand"
+            [ button
+                [ class "em em--writing-hand"
                 , title "Draw mode"
-                , onClick (SetMode DrawMode) ]
+                , onClick (SetMode DrawMode)
+                ]
                 []
             ]
         , toolItem (model.mode == SelectMode)
-            [ button [ class "em em--raised-hand"
-            , title "Select mode"
-            , onClick (SetMode SelectMode) ]
+            [ button
+                [ class "em em--raised-hand"
+                , title "Select mode"
+                , onClick (SetMode SelectMode)
+                ]
                 []
             ]
         , toolItem False
@@ -242,9 +248,11 @@ tools model =
                 []
             ]
         , toolItem False
-            [ button [ class "em em--prohibited"
-            , title "Erase all"
-            , onClick Clear ]
+            [ button
+                [ class "em em--prohibited"
+                , title "Erase all"
+                , onClick Clear
+                ]
                 []
             ]
         ]
@@ -253,9 +261,10 @@ tools model =
 view : Model -> Html Msg
 view model =
     main_ []
-        [ h1 [] 
-        [ div [ class "em em--artist-pallete em--md" ] []
-        , text " AII Canvas" ]
+        [ h1 []
+            [ div [ class "em em--artist-pallete em--md" ] []
+            , text " AII Canvas"
+            ]
         , section [ class "container" ]
             [ table model
             , tools model
